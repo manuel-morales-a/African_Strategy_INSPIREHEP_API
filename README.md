@@ -1,8 +1,27 @@
 # African Strategy – INSPIRE-HEP API Tools
 
-This repository contains a simple and reproducible workflow to query the **INSPIRE-HEP API** and extract publication metadata related to African institutions. It includes a Jupyter Notebook demonstrating the workflow, together with minimal code and data files designed to help researchers replicate or extend the analysis.
+This repository provides an accessible and reproducible workflow for exploring scientific activity in **High Energy, Cosmology, and Astroparticle Physics (HECAP)** across Africa using the **INSPIRE-HEP API**. It is designed to help students, researchers, and science-policy teams quickly gather publication information in a transparent and fully open way.
 
-The project is lightweight and suitable for anyone interested in scientometrics, HEP outreach, or automated retrieval of publication information from INSPIRE-HEP.
+The included Jupyter Notebook demonstrates how to retrieve and analyse publication records associated with African institutions. As a concrete example, we explore HECAP metrics for **Nigeria**, but the same approach can be applied to any country or region.
+
+> **Note:**  
+> This analysis is intentionally **simplified**, **quick**, and built for outreach and exploratory use.  
+> It is **not** a full scientometric pipeline, and **bugs or missing edge cases should be expected**.  
+> The goal is to provide a clear, minimal workflow that anyone can adapt and improve!
+
+This project supports broader outreach and capacity-building efforts by making it easier to:
+- understand the current landscape of HECAP research in Africa,
+- identify active groups and collaborations,
+- track scientific output over time,
+- and encourage evidence-based discussion about future development of the field.
+
+The workflow follows the methodology used in  
+**_Statistical Analysis of Scientific Metrics in High Energy, Cosmology, and Astroparticle Physics in Latin America_**,  
+an open scientometric study whose INSPIRE-HEP record is available here:  
+https://inspirehep.net/literature/2897923
+
+Have fun! 
+
 
 ---
 
@@ -14,7 +33,6 @@ African_Strategy_INSPIREHEP_API/
 ├── main.ipynb               # Main notebook demonstrating API usage
 ├── data/                    # Optional data folder (results, cached queries, etc.)
 ├── environment.yml          # Reproducible Conda environment
-├── requirements.txt         # Minimal pip-based environment (optional alternative)
 ├── .gitignore               # Standard ignore rules
 └── README.md                # Project documentation
 ```
@@ -64,21 +82,38 @@ and run all cells.
 
 The project uses only three libraries:
 
-- `IPython` → to display formatted API outputs  
 - `requests` → for HTTP queries to the INSPIRE API  
 - `json` → part of the Python standard library  
 
-These are already included in `environment.yml` or `requirements.txt`.
+These are already included in `environment.yml`.
 
 ---
 
 ## 📡 Data
 
-The `data/` directory is included for convenience and may contain:
+The `data/` directory contains small example files used by the notebook.  
+All data can be **easily regenerated** from the INSPIRE-HEP API.
 
-- cached JSON results from API calls  
-- processed data tables  
-- temporary output files  
+### Nigeria example (`nigeria_api.json`)
+
+The file `nigeria_api.json` contains the list of **Nigerian institutions** returned by the INSPIRE-HEP **institutions** endpoint.  
+It was generated using a country query of the form:
+
+```
+https://inspirehep.net/api/institutions?q=nigeria
+```
+
+From this result, we select institutions with `number_of_papers > 0` and extract their `legacy_ICN` codes.  
+These codes are then used to retrieve the associated publication records, which form the basis of the example analysis in the notebook.
+
+The same procedure can be applied to **any other country of interest** by replacing `nigeria` in the query.
+
+### Notes
+
+The folder may also include:
+- cached JSON results,
+- small processed tables,
+- temporary outputs.
 
 If you plan to store **large** datasets, consider adding them to `.gitignore`.
 
