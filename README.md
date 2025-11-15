@@ -9,19 +9,11 @@ The included Jupyter Notebook demonstrates how to retrieve and analyse records (
 > It is not a full scientometric pipeline, and bugs or missing edge cases should be expected.  
 > The goal is to provide a clear, minimal workflow that anyone can adapt and improve!
 
-This project supports broader outreach and capacity-building efforts by making it easier to:
-- understand the current landscape of HECAP research in Africa,
-- identify active groups and collaborations,
-- track scientific output over time,
-- and encourage evidence-based discussion about future development of the field.
+This project aims to support outreach and community-building by providing a simple way to explore HECAP activity across Africa. The goal is to offer a transparent starting point that can inform discussions about the development and support of HECAP in the region.
 
-The workflow follows the methodology used in  
-**_Statistical Analysis of Scientific Metrics in High Energy, Cosmology, and Astroparticle Physics in Latin America_**,  
-an open scientometric study whose INSPIRE-HEP record is available here:  
-https://inspirehep.net/literature/2897923
+The workflow follows the methodology used in **_Statistical Analysis of Scientific Metrics in High Energy, Cosmology, and Astroparticle Physics in Latin America_**, an open scientometric study whose INSPIRE-HEP record is available here: https://inspirehep.net/literature/2897923.
 
 Have fun! 
-
 
 ---
 
