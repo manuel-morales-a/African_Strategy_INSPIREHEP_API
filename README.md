@@ -1,12 +1,12 @@
 # African Strategy – INSPIRE-HEP API Tools
 
-This repository provides an accessible and reproducible workflow for exploring scientific activity in **High Energy, Cosmology, and Astroparticle Physics (HECAP)** across Africa using the **INSPIRE-HEP API**. It is designed to help students, researchers, and science-policy teams quickly gather publication information in a transparent and fully open way.
+This repository aims to provide an accessible and reproducible workflow for exploring scientific activity in **High Energy, Cosmology, and Astroparticle Physics (HECAP)** across Africa using the **INSPIRE-HEP API**. It is designed to help students, researchers, and science-policy teams quickly gather publication information in a transparent and open way.
 
-The included Jupyter Notebook demonstrates how to retrieve and analyse publication records associated with African institutions. As a concrete example, we explore HECAP metrics for **Nigeria**, but the same approach can be applied to any country or region.
+The included Jupyter Notebook demonstrates how to retrieve and analyse records (specifically author information) associated with African institutions. As a concrete example, we explore HECAP metrics for **Nigeria**, but the same approach can be applied to any country in the region.
 
 > **Note:**  
-> This analysis is intentionally **simplified**, **quick**, and built for outreach and exploratory use.  
-> It is **not** a full scientometric pipeline, and **bugs or missing edge cases should be expected**.  
+> This analysis is intentionally simplified, quick, and built for outreach and exploratory use.  
+> It is not a full scientometric pipeline, and bugs or missing edge cases should be expected.  
 > The goal is to provide a clear, minimal workflow that anyone can adapt and improve!
 
 This project supports broader outreach and capacity-building efforts by making it easier to:
@@ -96,15 +96,14 @@ All data can be **easily regenerated** from the INSPIRE-HEP API.
 
 ### Nigeria example (`nigeria_api.json`)
 
-The file `nigeria_api.json` contains the list of **Nigerian institutions** returned by the INSPIRE-HEP **institutions** endpoint.  
-It was generated using a country query of the form:
+The file `nigeria_api.json` contains the list of **Nigerian institutions** returned by the INSPIRE-HEP **institutions** endpoint. It was generated using a country query of the form:
 
 ```
 https://inspirehep.net/api/institutions?q=nigeria
 ```
 
 From this result, we select institutions with `number_of_papers > 0` and extract their `legacy_ICN` codes.  
-These codes are then used to retrieve the associated publication records, which form the basis of the example analysis in the notebook.
+These codes are then used to retrieve the associated authors of Nigeria and their collaborators, which form the basis of the example analysis in the notebook `main.ipynb`, which you are welcome to run.
 
 The same procedure can be applied to **any other country of interest** by replacing `nigeria` in the query.
 
@@ -132,20 +131,7 @@ You are welcome to fork or extend this project for similar research or for educa
 
 ---
 
-## 🔧 Customisation
-
-Feel free to modify:
-
-- the notebook to include additional fields, queries, or visualisation  
-- the data folder structure  
-- the query logic (e.g., search for countries, collaborations, authors, or topics)
-
-If you want, I can help you turn this into a small **Python package** (e.g., `inspire_africa`) with functions and CLI commands.
-
----
-
 ## 📄 License
 
-The project is released under the MIT License.  
 You are free to use, modify, and distribute it.
 
