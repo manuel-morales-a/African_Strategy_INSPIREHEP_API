@@ -39,7 +39,7 @@ You can reproduce the notebook environment using Conda (recommended) or pip.
 
 ```bash
 conda env create -f environment.yml
-conda activate african-strategy
+conda activate inspirehep-api
 ```
 
 ### **Option B — Using pip**
